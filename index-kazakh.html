@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="kz">
+<head>
+    <meta charset="UTF-8">
+    <title>Ағзадағы макро және микроэлементтер</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .intro {
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .intro h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .human-body img {
+            filter: blur(3px); /* Бұлыңғырлық қосамыз */
+            opacity: 0.7; /* Мөлдірлігін азайтамыз */
+            transition: filter 0.3s ease;
+        }
+        .human-body:hover img {
+            filter: blur(1px); /* Меңзер тигенде бұлыңғырлықты азайтамыз */
+        }
+        .human-body {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            transition: transform 0.5s ease;
+        }
+        .body-part {
+    position: absolute;
+    background-color: rgba(255,36,0, 0.5); /* Меняем цвет на белый с прозрачностью */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,36,0б 0.8); /* Добавляем белую рамку для лучшей видимости */
+    }
+
+    .body-part:hover {
+    background-color: rgba(255,36,0, 0.8); /* При наведении делаем белый более непрозрачным */
+    }
+        #head { top: 50px; left: 250px; width: 100px; height: 100px; }
+        #brain { top: 70px; left: 270px; width: 60px; height: 60px; }
+        #heart { top: 250px; left: 270px; width: 80px; height: 80px; }
+        #lungs { top: 200px; left: 230px; width: 70px; height: 70px; }
+        #liver { top: 350px; left: 280px; width: 70px; height: 70px; }
+        #bones { top: 450px; left: 250px; width: 100px; height: 100px; }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 20;
+            overflow-y: auto;
+        }
+        .modal-content {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            width: 80%;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        .close-btn {
+            float: right;
+            font-size: 30px;
+            cursor: pointer;
+            color: #2c3e50;
+        }
+        .element-details {
+            margin-top: 20px;
+            background: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="intro">
+            <h1>Адам ағзасындағы макро- және микроэлементтер</h1>
+            
+            <h2>Макроэлементтер</h2>
+            <p>Макроэлементтер - бұл ағзаға күніне 100 мг-нан астам мөлшерде қажет минералдар. Олар біздің ағзамыздың құрылыс блоктары болып табылады және әртүрлі биологиялық процестерде маңызды рөл атқарады:</p>
+            <div class="element-details">
+                <h3>Негізгі макроэлементтер:</h3>
+                <ul>
+                    <li><strong>Кальций:</strong> Сүйектер мен тістердің қалыптасуы, қан ұюы, жүйке импульстарының берілуі</li>
+                    <li><strong>Магний:</strong> Бұлшықет және жүйке функцияларын реттеу, ақуыз синтезі, энергия алмасуы</li>
+                    <li><strong>Калий:</strong> Жүрек ырғағын, бұлшықет жиырылуын, су балансын реттеу</li>
+                    <li><strong>Натрий:</strong> Қышқыл-сілтілік теңгерімді сақтау, жүйке импульстарының берілуі</li>
+                    <li><strong>Фосфор:</strong> Сүйектердің қалыптасуы, энергия өндірісі, ДНҚ синтезі</li>
+                </ul>
+            </div>
+
+            <h2>Микроэлементтер</h2>
+            <p>Микроэлементтер - бұл өте аз мөлшерде (күніне 100 мг-нан аз) қажет минералдар, бірақ олар көптеген физиологиялық процестер үшін өте маңызды:</p>
+            <div class="element-details">
+                <h3>Негізгі микроэлементтер:</h3>
+                <ul>
+                    <li><strong>Темір:</strong> Оттегін тасымалдау, гемоглобин синтезі, иммунитет</li>
+                    <li><strong>Мырыш:</strong> Иммундық функция, жараның жазылуы, метаболизм</li>
+                    <li><strong>Мыс:</strong> Қызыл қан клеткаларының түзілуі, иммунитетті қолдау, дәнекер тіндерінің синтезі</li>
+                    <li><strong>Селен:</strong> Антиоксиданттық қорғаныс, иммунитетті қолдау, гормондық теңгерім</li>
+                    <li><strong>Йод:</strong> Қалқанша без гормондарын өндіру, метаболизмді реттеу</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="human-body" id="humanBody">
+            <img src="human.jpg" alt="Адам денесі" style="width:100%; height:auto;">
+            <div id="head" class="body-part" data-part="head"></div>
+            <div id="brain" class="body-part" data-part="brain"></div>
+            <div id="heart" class="body-part" data-part="heart"></div>
+            <div id="lungs" class="body-part" data-part="lungs"></div>
+            <div id="liver" class="body-part" data-part="liver"></div>
+            <div id="bones" class="body-part" data-part="bones"></div>
+        </div>
+
+        <div class="modal" id="bodyPartModal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <div id="modalDescription"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const bodyParts = {
+            head: {
+                title: "Бас және ми: Неврологиялық денсаулық микроэлементтері",
+                details: [
+                    {
+                        name: "Мырыш",
+                        description: "Когнитивті функциялар үшін өте маңызды. Синаптикалық беріліске қатысады, жады мен зейінді қолдайды. Мырыш жетіспеушілігі танымдық қабілеттердің төмендеуіне әкелуі мүмкін."
+                    },
+                    {
+                        name: "Селен",
+                        description: "Нейрондарды тотығу стрессінен қорғайтын күшті антиоксидант. Нейродегенеративті аурулардың алдын алуға және ми денсаулығын сақтауға көмектеседі."
+                    },
+                    {
+                        name: "Мыс",
+                        description: "Нейромедиаторлар өндірісіне қатысады. Жүйке талшықтарының миелинизациясы үшін маңызды, бұл жүйке импульстарының өткізгіштігін жақсартады."
+                    }
+                ]
+            },
+            heart: {
+                title: "Жүрек-қантамыр жүйесі: Жүрек денсаулығының микроэлементтері",
+                details: [
+                    {
+                        name: "Калий",
+                        description: "Жүрек ырғағын реттейді, жүрек бұлшықетінің ырғақты жиырылуына көмектеседі. Аритмияның алдын алу және сау қан айналымын қолдау үшін өте маңызды."
+                    },
+                    {
+                        name: "Магний",
+                        description: "Жүрек бұлшықетінің босаңсуына көмектеседі, коронарлық артериялардың спазм қаупін төмендетеді. Жүрек-қантамыр ауруларының алдын алуда маңызды рөл атқарады."
+                    },
+                    {
+                        name: "Кальций",
+                        description: "Жүрек бұлшықетінің жиырылуы үшін қажет. Жүрек клеткалары арасындағы электр импульстарының берілуіне қатысады."
+                    }
+                ]
+            },
+            lungs: {
+                title: "Тыныс алу жүйесі: Өкпе денсаулығының микроэлементтері",
+                details: [
+                    {
+                        name: "Селен",
+                        description: "Тыныс алу жүйесінің иммунитетін күшейтеді, өкпе тінін қабыну процестерінен және тотығу стрессінен қорғайды."
+                    },
+                    {
+                        name: "Мырыш",
+                        description: "Өкпенің иммунды қорғанысын қолдайды, өкпе тінінің қалпына келуіне және тыныс алу жолдары ауруларының алдын алуға көмектеседі."
+                    }
+                ]
+            },
+            liver: {
+                title: "Бауыр: Метаболизм микроэлементтері",
+                details: [
+                    {
+                        name: "Темір",
+                        description: "Гемоглобин синтезі үшін қажет, бауырдың метаболикалық процестеріне қатысады, детоксикацияға көмектеседі."
+                    },
+                    {
+                        name: "Мырыш",
+                        description: "Ақуыз алмасуын қолдайды, ферменттер синтезіне қатысады, бауыр тінінің қалпына келуіне көмектеседі."
+                    },
+                    {
+                        name: "Мыс",
+                        description: "Темір метаболизміне қатысады, энергия өндірісіне және бауырдың антиоксиданттық қорғанысын сақтауға ықпал етеді."
+                    }
+                ]
+            },
+            bones: {
+                title: "Сүйек жүйесі: Беріктіктің макроэлементтері",
+                details: [
+                    {
+                        name: "Кальций",
+                        description: "Сүйек тінінің негізгі элементі. Сүйектердің беріктігі мен тығыздығын қамтамасыз етеді, остеопороздың алдын алады."
+                    },
+                    {
+                        name: "Фосфор",
+                        description: "Кальциймен бірге жұмыс істейді, сүйектердің минералдануына қатысады, олардың икемділігі мен беріктігін қолдайды."
+                    },
+                    {
+                        name: "Магний",
+                        description: "Кальций алмасуын реттейді, кальцийдің сүйек тінімен сіңірілуіне ықпал етеді, сүйектердің икемділігін қолдайды."
+                    }
+                ]
+            }
+        };
+
+        document.querySelectorAll('.body-part').forEach(part => {
+            part.addEventListener('click', function() {
+                const partType = this.getAttribute('data-part');
+                const info = bodyParts[partType];
+                
+                const modalDescription = document.getElementById('modalDescription');
+                modalDescription.innerHTML = `<h3>${info.title}</h3>`;
+                
+                info.details.forEach(element => {
+                    modalDescription.innerHTML += `
+                        <div class="element-details">
+                            <h4>${element.name}</h4>
+                            <p>${element.description}</p>
+                        </div>
+                    `;
+                });
+                
+                document.getElementById('bodyPartModal').style.display = 'block';
+            });
+        });
+
+        function closeModal() {
+            document.getElementById('bodyPartModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
